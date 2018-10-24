@@ -3,7 +3,6 @@ import websockets
 
 async def talking():
 	async with websockets.connect(
-		#'ws://localhost:8765') as websocket:
 		'ws://45.76.164.162:10') as websocket:
 
 		file_name = 'test.py'
