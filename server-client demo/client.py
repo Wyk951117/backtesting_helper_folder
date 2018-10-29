@@ -13,7 +13,7 @@ async def talking():
 		greeting = await websocket.recv()
 		print(f"< {greeting}")
 
-		with open('test/'+file_name, 'rb') as f:
+		with open(file_name, 'rb') as f:
 			for data in f:
 				await websocket.send(data)
 		await websocket.send('END OF FILE')
