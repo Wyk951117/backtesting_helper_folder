@@ -9,8 +9,8 @@ class multitask():
 
     def execute(self):
         strategy_module = importlib.__import__(self.custom_strategy)
+        importlib.reload(strategy_module)
         test_class = strategy_module.strategy_class()
-        test_class.output()
 
 
 
