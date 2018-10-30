@@ -2,7 +2,7 @@
 class strategy_class():
 
     def __init__(self):
-        self.content = "Hello World!"
+        self.content = "You'are Welcome World!"
         self.output()
 
     def output(self):
