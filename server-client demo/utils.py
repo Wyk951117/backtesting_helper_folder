@@ -49,7 +49,7 @@ async def talking(file_name,handler,feedback_figure_path=''):
 			else:
 				feedback_figure.write(image_slice)
 
-async def demo_talking(file_name,handler,feedback_figure_path=''):
+async def demo_talking(file_name,file_dir):
 	"""
 	    This function is used to send strategy
 	    file and handler (e.g. ['USDT_BTC_10sec_s'])
@@ -61,14 +61,14 @@ async def demo_talking(file_name,handler,feedback_figure_path=''):
 
 		# comment out the line below when the name of strategy 
 		# file is determined by customer
-		file_name = 'test.py'
+		#file_name = 'test.py'
 		await websocket.send(file_name)
 		print(f">{file_name} sent")
 
 		greeting = await websocket.recv()
 		print(f"< {greeting}")
 
-		with open(file_name, 'rb') as f:
+		with open(file_dir+file_name, 'rb') as f:
 			for data in f:
 				await websocket.send(data)
 		await websocket.send('END OF FILE')
@@ -76,8 +76,6 @@ async def demo_talking(file_name,handler,feedback_figure_path=''):
 		feedback = await websocket.recv()
 		print(f"< {feedback}")
 
-		request = await websocket.recv()
-		print(f"< {request}")
 
 
 
