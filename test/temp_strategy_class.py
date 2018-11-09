@@ -14,14 +14,24 @@ class temp_strategy_class():
 
     """
 
-    def __init__(self):
+    def __init__(self, parameters):
         # create a dataframe for all the indexes you need for 
         # computing and decision making
         #self.index_Df = pd.DataFrame(index=[], columns=['Up','Down','RSI'])
         self.gap = 0
         self.Up = 0
         self.Down = 0
-        self.RSI = 1
+        self.RSI = 0
+        self.parameters = parameters
+        #print(parameters)
+        self.assign_para()
+
+    def assign_para(self):
+        """ assign parameters
+        assign parameters with values passed in. This function can
+        be extended, say, add "self.MACD = self.parameters['MACD']"
+        """
+        self.RSI = self.parameters['RSI']
 
     def compute(self,input_Df,input_window,input_label):
         """ compute to decide action

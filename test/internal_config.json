@@ -5,16 +5,11 @@
     ],
     "label": [
         "open",
-        "high",
-        "low",
         "close"
     ],
     "timeInterval": [
         "10sec",
-        "1min",
-        "5min",
-        "60min",
-        "4hour"
+        "1min"
     ]
 
     }
