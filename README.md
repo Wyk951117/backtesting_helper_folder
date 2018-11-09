@@ -7,3 +7,6 @@ Can be a reference for creating your own strategy class for backtesting. The nam
 ## server-client demo
 This is a playground to test some new features of the server-client interaction environment. Also can be a reference to be more clear 
 about how your strategy file and strategy class would be imported and called during the process.
+
+## test
+Download this folder and execute client_main.py so as to run backtesting. (still in progress)
