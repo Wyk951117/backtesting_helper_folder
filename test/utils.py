@@ -18,7 +18,7 @@ async def talking(strategy_dir, strategy_name, internal_config, external_config,
                 await websocket.send("END OF FILE")
         # send strategy_name greeting
         await websocket.send(strategy_name)
-        print(f">{strategy_name} sent")
+        print(f"> {strategy_name} sent")
 
         # greeting from server
         greeting = await websocket.recv()
@@ -26,15 +26,15 @@ async def talking(strategy_dir, strategy_name, internal_config, external_config,
 
         # send strategy file
         await send_file(strategy_dir + strategy_name)
-        print(f"{await websocket.recv()}")  # feedback from server
+        print(f"< {await websocket.recv()}")  # feedback from server
         
         # send internal config
         await send_file(config_dir + internal_config)
-        print(f"{await websocket.recv()}")
+        print(f"< {await websocket.recv()}")
 
         # send external config
         await send_file(config_dir + external_config)
-        print(f"{await websocket.recv()}")
+        print(f"< {await websocket.recv()}")
 
         # handler is not useful anymore
         """

@@ -1,5 +1,5 @@
 import random
-
+import numpy as np
 class temp_strategy_class():
     """ a template for strategy class
     This is a template for a strategy class that should be 
@@ -66,7 +66,7 @@ class temp_strategy_class():
 
             # decision making process
             core = random.random()
-            if self.RSI>0.5:
+            if np.random.randint(5) > 2:
                 #print('make a sell order')
                 return 'buy'
             else:
